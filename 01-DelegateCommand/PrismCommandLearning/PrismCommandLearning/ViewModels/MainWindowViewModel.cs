@@ -23,8 +23,10 @@ namespace PrismCommandLearning.ViewModels
         }
 
         public DelegateCommand BeginTimeTick { get; private set; }
+        
+        public DelegateCommand command1 { get; set; }
 
-
+        public bool kkk;
         public MainWindowViewModel()
         {
             CurrentTime = DateTime.Now.ToString();
@@ -38,7 +40,18 @@ namespace PrismCommandLearning.ViewModels
 
             //3.Await
             //BeginTimeTick = new DelegateCommand(awaitMethod);
+
+            //带条件
+
+            command1 = new DelegateCommand(excute).ObservesCanExecute(() => kkk);
+
         }
+
+        private void excute()
+        {
+            throw new NotImplementedException();
+        }
+
 
         private void ShowTime()
         {
