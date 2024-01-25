@@ -1,0 +1,17 @@
+﻿<Window x:Class="PrismCommandLearning.Views.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:prism="http://prismlibrary.com/"
+        prism:ViewModelLocator.AutoWireViewModel="True"
+        Title="{Binding Title}" Height="350" Width="525" >
+    <Grid>
+
+        <ContentControl prism:RegionManager.RegionName="ContentRegion" Margin="221,40,18,41" >
+            <!--以下位置会报错-->
+            <!--<Button Content="Button" HorizontalAlignment="Left" Margin="109,74,0,0" VerticalAlignment="Top" Height="62" Width="89" Command="{Binding ShowMessageCommand}"/>-->
+        </ContentControl>
+
+        <Button Content="Button" Command="{Binding BeginTimeTick}" HorizontalAlignment="Left" Margin="60,61,0,0" VerticalAlignment="Top" Height="63" Width="103"/>
+        <TextBlock HorizontalAlignment="Left" Margin="34,155,0,0" Text="{Binding CurrentTime}" TextWrapping="Wrap" VerticalAlignment="Top" Height="31" Width="156"/>
+    </Grid>
+</Window>
