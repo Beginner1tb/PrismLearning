@@ -2,6 +2,7 @@
 using Prism.Mvvm;
 using System;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace PrismCommandLearning.ViewModels
 {
@@ -22,11 +23,23 @@ namespace PrismCommandLearning.ViewModels
             set { SetProperty(ref _currentTime, value); }
         }
 
-        public DelegateCommand BeginTimeTick { get; private set; }
-        
-        public DelegateCommand command1 { get; set; }
+        private bool _canDisplay;
 
-        public bool kkk;
+        public bool CanDisplay
+        {
+            get { return _canDisplay; }
+            set
+            {
+                SetProperty(ref _canDisplay, value);
+                ConditionCommand.RaiseCanExecuteChanged();
+            }
+        }
+
+        public DelegateCommand BeginTimeTick { get; private set; }
+        public DelegateCommand ConditionCommand { get; set; }
+        public DelegateCommand DelegateCommandObservesProperty { get; private set; }
+        public DelegateCommand DelegateCommandObservesCanExecute { get; private set; }
+        public DelegateCommand<string> ExecuteGenericDelegateCommand { get; private set; }
         public MainWindowViewModel()
         {
             CurrentTime = DateTime.Now.ToString();
@@ -42,14 +55,33 @@ namespace PrismCommandLearning.ViewModels
             //BeginTimeTick = new DelegateCommand(awaitMethod);
 
             //带条件
+            //1.原始方式
+            ConditionCommand = new DelegateCommand(Execute, CanExecute);
 
-            command1 = new DelegateCommand(excute).ObservesCanExecute(() => kkk);
+            //2.ObservesProperty方式
+            DelegateCommandObservesProperty = new DelegateCommand(Execute, CanExecute).ObservesProperty(() => CanDisplay);
+
+            //3.ObservesCanExecute，注意只能观察一个属性
+            DelegateCommandObservesCanExecute = new DelegateCommand(Execute).ObservesCanExecute(() => CanDisplay);
+
+            //4.带参数输入的通用方式
+            ExecuteGenericDelegateCommand = new DelegateCommand<string>(ExecuteGeneric).ObservesCanExecute(() => CanDisplay);
 
         }
 
-        private void excute()
+        private void ExecuteGeneric(string parameter)
         {
-            throw new NotImplementedException();
+            MessageBox.Show(parameter);
+        }
+
+        private bool CanExecute()
+        {
+            return CanDisplay;
+        }
+
+        private void Execute()
+        {
+            MessageBox.Show("yes");
         }
 
 
