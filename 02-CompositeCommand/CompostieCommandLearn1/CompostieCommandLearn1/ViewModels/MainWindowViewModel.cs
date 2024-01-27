@@ -41,7 +41,8 @@ namespace CompostieCommandLearn1.ViewModels
         {
             Btn1CompositeCommand = new CompositeCommand();
             //TimeCommand = new DelegateCommand(ExcuteTime, CanExcuteTime);
-            Btn1CompositeCommand.RegisterCommand(new DelegateCommand(ExcuteTime, CanExcuteTime));
+            //可以不写条件
+            Btn1CompositeCommand.RegisterCommand(new DelegateCommand(ExcuteTime));
             Btn1CompositeCommand.RegisterCommand(new DelegateCommand(ExcuteMessage, CanExcuteMessage));
         }
 
