@@ -1,34 +1,77 @@
-﻿<Window x:Class="PrismCommandLearning.Views.MainWindow"
-        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:prism="http://prismlibrary.com/"
-        xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
-
-        prism:ViewModelLocator.AutoWireViewModel="True"
-        Title="{Binding Title}" Height="350" Width="525" >
+﻿<Window
+    x:Class="PrismCommandLearning.Views.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:i="http://schemas.microsoft.com/xaml/behaviors" xmlns:prism="http://prismlibrary.com/"
+    Title="{Binding Title}"
+    Width="525" Height="350"
+    prism:ViewModelLocator.AutoWireViewModel="True">
     <Grid>
 
-        <ContentControl prism:RegionManager.RegionName="ContentRegion" Margin="452,256,18,41" >
-            <!--以下位置会报错-->
+        <ContentControl Margin="452,256,18,41" prism:RegionManager.RegionName="ContentRegion">
+            <!--  以下位置会报错  -->
             <!--<Button Content="Button" HorizontalAlignment="Left" Margin="109,74,0,0" VerticalAlignment="Top" Height="62" Width="89" Command="{Binding ShowMessageCommand}"/>-->
         </ContentControl>
 
-        <Button Content="时间显示" Command="{Binding BeginTimeTick}" HorizontalAlignment="Left" Margin="26,208,0,0" VerticalAlignment="Top" Height="26" Width="102"/>
-        <TextBlock HorizontalAlignment="Left" Margin="10,256,0,0" Text="{Binding CurrentTime}" TextWrapping="Wrap" VerticalAlignment="Top" Height="31" Width="156"/>
-        <CheckBox Content="isDisplayed" IsChecked="{Binding CanDisplay}" HorizontalAlignment="Left" Margin="223,41,0,0" VerticalAlignment="Top"/>
-        <Button Content="带条件原始方式显示" Command="{Binding ConditionCommand}" HorizontalAlignment="Left" Margin="151,106,0,0" VerticalAlignment="Top" Width="198" />
-        <RadioButton Content="RadioButton" Command="{Binding ConditionCommand}" HorizontalAlignment="Center" Margin="0,73,0,0" VerticalAlignment="Top"/>
-        <DataGrid x:Name="myDataGrid" Margin="382,25,18,168" AutoGenerateColumns="True">
+        <Button
+            Width="102" Height="26"
+            Margin="27,161,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"
+            Command="{Binding BeginTimeTick}"
+            Content="时间显示" />
+        <TextBlock
+            Width="156" Height="31"
+            Margin="10,256,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"
+            Text="{Binding CurrentTime}"
+            TextWrapping="Wrap" />
+        <CheckBox
+            Margin="223,41,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"
+            Content="isDisplayed"
+            IsChecked="{Binding CanDisplay}" />
+        <Button
+            Width="198"
+            Margin="151,106,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"
+            Command="{Binding ConditionCommand}"
+            Content="带条件原始方式显示" />
+        <RadioButton
+            Margin="0,73,0,0" HorizontalAlignment="Center" VerticalAlignment="Top"
+            Command="{Binding ConditionCommand}"
+            Content="RadioButton" />
+        <DataGrid
+            x:Name="myDataGrid"
+            Margin="382,25,18,168"
+            AutoGenerateColumns="True">
             <i:Interaction.Triggers>
                 <i:EventTrigger EventName="SelectionChanged">
-                    <i:InvokeCommandAction Command="{Binding ConditionCommand}"
-                                    />
+                    <i:InvokeCommandAction Command="{Binding ConditionCommand}" />
                 </i:EventTrigger>
             </i:Interaction.Triggers>
 
         </DataGrid>
-        <Button Content="带条件ObservesProperty方式" Command="{Binding DelegateCommandObservesProperty}" HorizontalAlignment="Left" Margin="151,140,0,0" VerticalAlignment="Top" Width="198" />
-        <Button Content="带条件ObservesCanExecute方式显示" Command="{Binding DelegateCommandObservesCanExecute}" HorizontalAlignment="Left" Margin="151,179,0,0" VerticalAlignment="Top" Width="198" />
-        <Button Content="带条件参数输入的通用方式显示" Command="{Binding ExecuteGenericDelegateCommand}" CommandParameter="This is Parameter" HorizontalAlignment="Left" Margin="151,211,0,0" VerticalAlignment="Top" Width="198" />
+        <Button
+            Width="198"
+            Margin="151,140,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"
+            Command="{Binding DelegateCommandObservesProperty}"
+            Content="带条件ObservesProperty方式" />
+        <Button
+            Width="198"
+            Margin="151,179,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"
+            Command="{Binding DelegateCommandObservesCanExecute}"
+            Content="带条件ObservesCanExecute方式显示" />
+        <Button
+            Width="198"
+            Margin="151,211,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"
+            Command="{Binding ExecuteGenericDelegateCommand}"
+            CommandParameter="This is Parameter" Content="带条件参数输入的通用方式显示" />
+        <Button
+            Width="102"
+            Margin="27,197,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"
+            Command="{Binding LambdaCommand}"
+            Content="lambda表达式" />
+        <Label
+            Margin="49,116,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"
+            Content="不带条件" />
+        <Label
+            Margin="221,8,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"
+            Content="带条件" />
     </Grid>
 </Window>

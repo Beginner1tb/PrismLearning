@@ -34,17 +34,23 @@ namespace PrismCommandLearning.ViewModels
                 ConditionCommand.RaiseCanExecuteChanged();
             }
         }
-
+        //不带条件
         public DelegateCommand BeginTimeTick { get; private set; }
+
+       public DelegateCommand LambdaCommand => new DelegateCommand(() => { ShowTime(); });
+
+        //带条件的
         public DelegateCommand ConditionCommand { get; set; }
         public DelegateCommand DelegateCommandObservesProperty { get; private set; }
         public DelegateCommand DelegateCommandObservesCanExecute { get; private set; }
         public DelegateCommand<string> ExecuteGenericDelegateCommand { get; private set; }
+
+        
         public MainWindowViewModel()
         {
-            CurrentTime = DateTime.Now.ToString();
+            //CurrentTime = DateTime.Now.ToString();
 
-
+            //不带条件
             //1.普通方法
             //BeginTimeTick = new DelegateCommand(ShowTime);
 
@@ -53,6 +59,8 @@ namespace PrismCommandLearning.ViewModels
 
             //3.Await
             //BeginTimeTick = new DelegateCommand(awaitMethod);
+
+            
 
             //带条件
             //1.原始方式
@@ -66,6 +74,8 @@ namespace PrismCommandLearning.ViewModels
 
             //4.带参数输入的通用方式
             ExecuteGenericDelegateCommand = new DelegateCommand<string>(ExecuteGeneric).ObservesCanExecute(() => CanDisplay);
+
+            
 
         }
 
