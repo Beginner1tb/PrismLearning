@@ -1,0 +1,8 @@
+﻿<prism:PrismApplication
+    x:Class="RegionNavigator1.App"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:RegionNavigator1"
+    xmlns:prism="http://prismlibrary.com/">
+    <Application.Resources />
+</prism:PrismApplication>

@@ -12,6 +12,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MD_File", "MD_File", "{5809
 		Readme.md = Readme.md
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "02-CompositeCommand1", "02-CompositeCommand1", "{90A0731B-A2DC-4E4D-B786-E9DBB83325EE}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CompostieCommandLearn1", "02-CompositeCommand\CompostieCommandLearn1\CompostieCommandLearn1\CompostieCommandLearn1.csproj", "{84E72054-5DDC-4CD9-97DC-AB41AB21890D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -22,12 +26,17 @@ Global
 		{FC2CEF27-5EAE-4D6E-9375-D2DAA5E3170D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FC2CEF27-5EAE-4D6E-9375-D2DAA5E3170D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FC2CEF27-5EAE-4D6E-9375-D2DAA5E3170D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{84E72054-5DDC-4CD9-97DC-AB41AB21890D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{84E72054-5DDC-4CD9-97DC-AB41AB21890D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{84E72054-5DDC-4CD9-97DC-AB41AB21890D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{84E72054-5DDC-4CD9-97DC-AB41AB21890D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{FC2CEF27-5EAE-4D6E-9375-D2DAA5E3170D} = {1452E98F-C1FB-4511-9A41-6CEAE67F5203}
+		{84E72054-5DDC-4CD9-97DC-AB41AB21890D} = {90A0731B-A2DC-4E4D-B786-E9DBB83325EE}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {DACB6293-FFD3-4CE0-9202-58BF9E6255A8}

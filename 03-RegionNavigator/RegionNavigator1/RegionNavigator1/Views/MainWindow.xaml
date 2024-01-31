@@ -1,0 +1,22 @@
+﻿<Window
+    x:Class="RegionNavigator1.Views.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:RegionNavigator1"
+    xmlns:prism="http://prismlibrary.com/"
+    Title="{Binding Title}"
+    Width="525"
+    Height="350"
+    prism:ViewModelLocator.AutoWireViewModel="True">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <ContentControl Grid.Column="0" prism:RegionManager.RegionName="ContentRegion" />
+        <!--  静态命名Region  -->
+        <!--<ContentControl Grid.Column="1" prism:RegionManager.RegionName="{x:Static local:Regions.DisplayRegion}" />-->
+        <ContentControl Grid.Column="1" prism:RegionManager.RegionName="DisplayRegion" />
+    </Grid>
+</Window>
