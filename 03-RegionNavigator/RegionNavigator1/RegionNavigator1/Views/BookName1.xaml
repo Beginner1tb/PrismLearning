@@ -1,0 +1,13 @@
+﻿<UserControl x:Class="RegionNavigator1.Views.BookName1"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:prism="http://prismlibrary.com/"             
+             prism:ViewModelLocator.AutoWireViewModel="True">
+    <Grid>
+        <StackPanel>
+            <Button Content="BtnName" Command="{Binding RefreshCommand}"/>
+            <ListView ItemsSource="{Binding NewsFeed}"  Height="100"/>
+            <TextBlock Text="{Binding TextName}"/>
+        </StackPanel>
+    </Grid>
+</UserControl>

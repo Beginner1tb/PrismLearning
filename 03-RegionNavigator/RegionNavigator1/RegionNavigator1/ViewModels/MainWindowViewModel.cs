@@ -13,11 +13,18 @@ namespace RegionNavigator1.ViewModels
             set { SetProperty(ref _title, value); }
         }
 
+        //private string _testText = "Prism Application";
+        //public string TestText
+        //{
+        //    get { return _testText; }
+        //    set { SetProperty(ref _testText, value); }
+        //}
+
         public MainWindowViewModel(IRegionManager regionManager)
             : base(regionManager)
         {
             RegionManager.RegisterViewWithRegion("ContentRegion", typeof(NavigatorButton));
-            
+            //RegionManager.RegisterViewWithRegion("DisplayRegion", typeof(BookNameView));
 
         }
     }

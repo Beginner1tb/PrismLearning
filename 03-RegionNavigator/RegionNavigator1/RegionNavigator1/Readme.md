@@ -22,3 +22,9 @@
 5. 根据需求在各自的View和ViewModel上写好数据和命令绑定方式；
 6. 显示内容需要RegisterViewWithRegion到相应的RegionName上；
 7. 如果涉及到Navigator,Singleton等事件，则需要在App.xaml中的RegisterTypes内先注册
+#### 6. View和ViewModel关系
+1. ViewModel是View的内在关系，其绑定的**属性，注意不是字段**和命令在本View内生效；
+2. 一个View对应一个ViewModel，需要在app.xaml.cs文件里注册相应的View，使用时也是将View导航至指定的Region
+3. 存疑点，是否能在子界面这类非MainWindow的地方使用
+#### 7. 属性绑定
+1. BookName1的View里有两种绑定，普通属性绑定和带事件通知监听的属性（类似于RaiseEvent和PropertyChanged）不同，普通属性绑定在后续事件更新属性值后不能更新，而后者可以更新，注意后者派生自BindableBase，来自Prism

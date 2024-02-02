@@ -16,12 +16,15 @@ namespace RegionNavigator1
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
-           
+            //containerRegistry.Register<Services.IBook, Services.Book>();
 
             containerRegistry.RegisterForNavigation<ViewA>();
+            //containerRegistry.RegisterForNavigation<BookNameView>();
+            containerRegistry.RegisterForNavigation<ButtonTest1>();
+            containerRegistry.RegisterForNavigation<BookName1>();
             //containerRegistry.RegisterForNavigation<NavigatorButton>();
-        
-           // containerRegistry.RegisterForNavigation<OptionsView>();
+
+            // containerRegistry.RegisterForNavigation<OptionsView>();
         }
     }
 }

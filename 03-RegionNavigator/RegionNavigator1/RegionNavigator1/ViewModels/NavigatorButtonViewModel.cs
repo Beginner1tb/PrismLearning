@@ -19,7 +19,14 @@ namespace RegionNavigator1.ViewModels
         {
             //静态命名Region
             //RegionManager.RequestNavigate(Regions.DisplayRegion, nameof(ViewA));
-            RegionManager.RequestNavigate("DisplayRegion", nameof(ViewA));
+            RegionManager.RequestNavigate("DisplayRegion", nameof(BookName1));
+        });
+
+        public DelegateCommand ChooseBCommand => new DelegateCommand(() =>
+        {
+            //静态命名Region
+            //RegionManager.RequestNavigate(Regions.DisplayRegion, nameof(ViewA));
+            RegionManager.RequestNavigate("DisplayRegion", nameof(ButtonTest1));
         });
     }
 }

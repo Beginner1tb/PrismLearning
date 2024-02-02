@@ -4,6 +4,13 @@
              xmlns:prism="http://prismlibrary.com/"             
              prism:ViewModelLocator.AutoWireViewModel="True">
     <Grid>
-            
+        <StackPanel Orientation="Vertical">
+            <TextBlock Text="This is a Test ListView Below"/>
+            <ListView ItemsSource="{Binding Books}"  Height="100"/>
+            <TextBlock Text="{Binding TestText}"/>
+            <Button Command="{Binding com}" Content="111"/>
+        </StackPanel>
+       
+        
     </Grid>
 </UserControl>
