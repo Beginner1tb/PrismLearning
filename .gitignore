@@ -333,8 +333,8 @@ __pycache__/
 *.xsd.cs
 
 # Output
-!/[Oo]utput/readme.txt
-!/[Oo]utput/readme.md
+[Oo]utput/
+
 
 # OpenCover UI analysis results
 OpenCover/
