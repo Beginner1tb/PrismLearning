@@ -332,6 +332,10 @@ __pycache__/
 *.odx.cs
 *.xsd.cs
 
+# Output
+!/[Oo]utput/readme.txt
+!/[Oo]utput/readme.md
+
 # OpenCover UI analysis results
 OpenCover/
 
@@ -362,6 +366,3 @@ MigrationBackup/
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
 
-# Output
-!/[Oo]utput/readme.txt
-!/[Oo]utput/readme.md
