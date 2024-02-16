@@ -7,15 +7,22 @@ namespace ModuleA
 {
     public class ModuleAModule : IModule
     {
+        private IRegionManager _regionManager;
+        public ModuleAModule(IRegionManager regionManager)
+        {
+            _regionManager = regionManager;
+        }
+
         public void OnInitialized(IContainerProvider containerProvider)
         {
-            var regionManager = containerProvider.Resolve<IRegionManager>();
-            regionManager.RegisterViewWithRegion("ContentRegion", typeof(ViewA));
+            //var regionManager = containerProvider.Resolve<IRegionManager>();
+            _regionManager.RegisterViewWithRegion("ContentRegion", typeof(ViewA));
         }
 
         public void RegisterTypes(IContainerRegistry containerRegistry)
         {
 
         }
+
     }
 }
