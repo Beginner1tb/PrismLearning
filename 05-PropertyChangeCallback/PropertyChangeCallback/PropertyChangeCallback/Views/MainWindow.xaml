@@ -6,8 +6,11 @@
         Title="{Binding Title}" Height="350" Width="525" >
     <Grid>
         <ContentControl prism:RegionManager.RegionName="ContentRegion" >
-            
+
+
         </ContentControl>
-        <CheckBox Content="YesButton" IsChecked="{Binding Sasd}" Margin="156,91,156,91"/>
+        <CheckBox Content="YesButton" IsChecked="{Binding Sasd}" Margin="69,48,350,252"/>
+        <Label Content="{Binding RandomInt}"  HorizontalAlignment="Left" FontSize="15" Margin="80,88,0,0" VerticalAlignment="Top"/>
+        <Button Content="Generate Int" Command="{Binding RandomIntCmd}" HorizontalAlignment="Left" Margin="69,126,0,0" VerticalAlignment="Top" Height="28" Width="77"/>
     </Grid>
 </Window>
