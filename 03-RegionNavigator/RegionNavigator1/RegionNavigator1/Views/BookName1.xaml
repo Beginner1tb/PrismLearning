@@ -6,8 +6,10 @@
     <Grid>
         <StackPanel>
             <Button Content="BtnName" Command="{Binding RefreshCommand}"/>
-            <ListView ItemsSource="{Binding NewsFeed}"  Height="100"/>
+            <ListView ItemsSource="{Binding Books}"  Height="100"/>
+            <!--<ListView ItemsSource="{Binding NewsFeed}"  Height="100"/>-->
             <TextBlock Text="{Binding TextName}"/>
+           
         </StackPanel>
     </Grid>
 </UserControl>

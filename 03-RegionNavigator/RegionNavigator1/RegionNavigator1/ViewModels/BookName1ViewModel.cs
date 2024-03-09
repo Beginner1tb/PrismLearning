@@ -42,8 +42,19 @@ namespace RegionNavigator1.ViewModels
             TextName = "1312";
         }
 
-        public DelegateCommand RefreshCommand => new DelegateCommand(OnRresh);
+        public DelegateCommand RefreshCommand => new DelegateCommand(OnRresh1);
 
+        private void OnRresh1()
+        {
+            Books.Clear();
+            Books = new List<string>()
+           {
+              "sadasd",
+              "sadaq",
+              "jhsiq"
+           };
+        }
+        //错误写法，必须BindableBase.SetProperty
         private void OnRresh()
         {
             NewsFeed.Clear();
@@ -56,7 +67,7 @@ namespace RegionNavigator1.ViewModels
 
             TextName = "112312";
         }
-
+        //注意，相对Books来说，NewsFeed字段是错误写法，必须使用BindableBase.SetProperty
         public ObservableCollection<string> NewsFeed { get; private set; } = new ObservableCollection<string>();
 
         //3. 导航按钮事件重载，可以用于按钮切换开始和结束事件
