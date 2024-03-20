@@ -17,6 +17,10 @@ namespace CustomRegionAdapt1.ViewModels
         {
             regionManager.RegisterViewWithRegion("StackRegion", typeof(ViewA));
             regionManager.RegisterViewWithRegion("StackRegion", typeof(ViewB));
+            regionManager.RegisterViewWithRegion("StackRegion", typeof(ViewA));
+            regionManager.RegisterViewWithRegion("StackRegion", typeof(ViewB));
+            regionManager.RegisterViewWithRegion("StackRegion", typeof(ViewA));
+            regionManager.RegisterViewWithRegion("StackRegion", typeof(ViewB));
         }
     }
 }
