@@ -24,7 +24,8 @@ namespace ModuleB.ViewModels
         {
             Message = new ObservableCollection<string>();
             Message.Add("This is a blank message");
-            eventAggregator.GetEvent<MessageSendEvent>().Subscribe(MessgeReceived,threadOption:ThreadOption.BackgroundThread);
+            //可以增加过滤条件
+            eventAggregator.GetEvent<MessageSendEvent>().Subscribe(MessgeReceived,threadOption:ThreadOption.UIThread,false,str=>str=="1234");
         }
 
         private void MessgeReceived(string str)
