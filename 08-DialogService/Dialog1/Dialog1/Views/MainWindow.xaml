@@ -1,0 +1,33 @@
+﻿<Window
+    x:Class="Dialog1.Views.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:prism="http://prismlibrary.com/"
+    Title="{Binding Title}"
+    Width="525"
+    Height="350"
+    prism:ViewModelLocator.AutoWireViewModel="True">
+    <Grid>
+        <ContentControl Margin="0,0,337,90" prism:RegionManager.RegionName="ContentRegion" />
+        <Button
+            Width="76"
+            Height="33"
+            Margin="262,122,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Command="{Binding ShowDialogCmd}"
+            Content="ShowDialog1" />
+        <TextBlock
+            Margin="262,58,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Text="Result of Dialog: "
+            TextWrapping="Wrap" />
+        <TextBlock
+            Margin="262,89,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Text="{Binding DialogRes}"
+            TextWrapping="Wrap" />
+    </Grid>
+</Window>
